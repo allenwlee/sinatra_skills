@@ -1,7 +1,7 @@
 get '/' do
   # render home page
   @users = User.all
-
+  @user = User.find(session[:user_id])
   erb :index
 end
 

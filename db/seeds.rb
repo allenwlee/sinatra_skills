@@ -1,6 +1,6 @@
 require 'faker'
 
-# create a few users
+# # create a few users
 User.create :name => 'Dev Bootcamp Student', :email => 'me@example.com', :password => 'password'
 5.times do
   User.create :name => Faker::Name.name, :email => Faker::Internet.email, :password => 'password'
@@ -19,3 +19,9 @@ design_skills.each do |skill|
 end
 
 # TODO: create associations between users and skills
+User.find(1).skills << Skill.find(1)
+User.find(2).skills << Skill.find(1)
+User.find(3).skills << Skill.find(1)
+User.find(4).skills << Skill.find(1)
+User.find(4).skills << Skill.find(2)
+User.find(4).skills << Skill.find(3)
