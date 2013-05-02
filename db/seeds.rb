@@ -25,3 +25,7 @@ User.find(3).skills << Skill.find(1)
 User.find(4).skills << Skill.find(1)
 User.find(4).skills << Skill.find(2)
 User.find(4).skills << Skill.find(3)
+
+User.find(4).skills << Skill.find(3)
+User.find(4).skills << Skill.find(3)
+User.find(4).skills << Skill.find(3)

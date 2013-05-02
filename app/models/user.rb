@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_and_belongs_to_many :skills
+  has_many :proficiencies
+  has_many :skills, :through => :proficiencies
 
   attr_reader :entered_password
 
