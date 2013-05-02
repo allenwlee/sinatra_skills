@@ -1,31 +1,24 @@
 require 'faker'
 
 # # create a few users
-User.create :name => 'Dev Bootcamp Student', :email => 'me@example.com', :password => 'password'
-5.times do
-  User.create :name => Faker::Name.name, :email => Faker::Internet.email, :password => 'password'
-end
+# User.create :name => 'Dev Bootcamp Student', :email => 'me@example.com', :password => 'password'
+# 5.times do
+#   User.create :name => Faker::Name.name, :email => Faker::Internet.email, :password => 'password'
+# end
 
-# create a few technical skills
-computer_skills = %w(Ruby Sinatra Rails JavaScript jQuery HTML CSS)
-computer_skills.each do |skill|
-  Skill.create :name => skill, :context => 'technical'
-end
+# # create a few technical skills
+# computer_skills = %w(Ruby Sinatra Rails JavaScript jQuery HTML CSS)
+# computer_skills.each do |skill|
+#   Skill.create :name => skill, :context => 'technical'
+# end
 
-# create a few creative skills
-design_skills = %w(Photoshop Illustrator Responsive-Design)
-design_skills.each do |skill|
-  Skill.create :name => skill, :context => 'creative'
-end
+# # create a few creative skills
+# design_skills = %w(Photoshop Illustrator Responsive-Design)
+# design_skills.each do |skill|
+#   Skill.create :name => skill, :context => 'creative'
+# end
 
 # TODO: create associations between users and skills
-User.find(1).skills << Skill.find(1)
-User.find(2).skills << Skill.find(1)
-User.find(3).skills << Skill.find(1)
-User.find(4).skills << Skill.find(1)
-User.find(4).skills << Skill.find(2)
-User.find(4).skills << Skill.find(3)
+User.find(1).proficiencies << Proficiency.create(formal_education: true, experience_years: 2, skill_id: 2)
 
-User.find(4).skills << Skill.find(3)
-User.find(4).skills << Skill.find(3)
-User.find(4).skills << Skill.find(3)
+User.find(1).proficiencies << Proficiency.create(formal_education: true, experience_years: 3, skill_id: 3)

@@ -1,7 +1,25 @@
 <div class="container">
   <h1>User Skills and Levels</h1>
-    <%@user.skills.each do |s| %>
-      <p><%=s.name%><p>
-    <%end%>
-  <%# TODO: display the skills and proficiency levels for each user ... %>
+      <table>
+        <tr>
+          <th>User</th>
+          <th>Skill Name</th>
+          <th>Skill Category</th>
+          <th>Years Experience</th>
+          <th>Formal Education?</th>
+        </tr>
+        <tr>
+        <%@users.each do |u| %>
+          <tr>
+          <td><%=u.name%></td>
+          <%u.proficiencies.each do |p| %>  
+              <td><%=Skill.find(p.skill_id).name%></td>
+              <td><%=Skill.find(p.skill_id).context%></td>
+              <td><%=p.experience_years%></td>
+              <td><%=p.formal_education%></td>
+          <%end %>
+          </tr>
+        <%end %>
+        </tr>
+      </table>
 </div>
